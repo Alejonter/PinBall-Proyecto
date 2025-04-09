@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://chp7fa8ly12jd"]
+
+[ext_resource type="Script" path="res://Ball.gd" id="1_emnmt"]
+[ext_resource type="Texture2D" uid="uid://biykd8037qjn4" path="res://Ball Pinball.png" id="2_7ro7a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sgyry"]
+radius = 24.0208
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tfxr"]
+size = Vector2(290, 30)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ball" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_emnmt")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Ball"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball/CharacterBody2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_7ro7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/CharacterBody2D"]
+shape = SubResource("CircleShape2D_sgyry")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(533, 417)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(146, 15)
+shape = SubResource("RectangleShape2D_5tfxr")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_right = 291.0
+offset_bottom = 31.0
+metadata/_edit_use_anchors_ = true

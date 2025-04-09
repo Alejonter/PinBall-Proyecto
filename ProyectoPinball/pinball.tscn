@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8q6x67bjwy5o"]
+
+[ext_resource type="Texture2D" uid="uid://0eprgd2yuhu7" path="res://assets/table.png" id="1_vdxpe"]
+[ext_resource type="PackedScene" uid="uid://r6hwm3duqphe" path="res://Ball.tscn" id="2_e78sp"]
+[ext_resource type="PackedScene" uid="uid://cs43y3ss3xuob" path="res://flipper_left.tscn" id="3_t6ii5"]
+[ext_resource type="PackedScene" uid="uid://dhv1hvpfdpbvd" path="res://flipper_right.tscn" id="4_7dlyx"]
+[ext_resource type="Script" uid="uid://vl6enipdgw6o" path="res://flipper_left.gd" id="4_ia8el"]
+[ext_resource type="Script" uid="uid://cpjlgffmfhli8" path="res://flipper_right.gd" id="6_r4l6h"]
+
+[node name="Pinball" type="Node2D"]
+
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(423, 599)
+scale = Vector2(0.945871, 0.669643)
+texture = ExtResource("1_vdxpe")
+
+[node name="Area2D" type="Area2D" parent="Table"]
+position = Vector2(-5.28613, -2.98676)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Table/Area2D"]
+
+[node name="Paredes1" type="CollisionPolygon2D" parent="Table/Area2D/StaticBody2D"]
+position = Vector2(-414.433, -869.12)
+scale = Vector2(2.34994, 2.72298)
+build_mode = 1
+polygon = PackedVector2Array(329, 644, 329.324, 82.8112, 302.33, 40.0346, 290, 66, 307, 90, 314, 110, 314, 140, 262, 308, 272, 313, 292, 268, 319, 276, 300, 339, 317, 406, 317, 527, 223, 597, 224, 643)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("3_t6ii5")]
+position = Vector2(271, 1114)
+script = ExtResource("4_ia8el")
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("4_7dlyx")]
+position = Vector2(496, 1121)
+script = ExtResource("6_r4l6h")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(552, 1122)
+scale = Vector2(0.51, 0.51)
+node_a = NodePath("../flipper_left")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="."]
+position = Vector2(215, 1121)
+rotation = 3.14159
+scale = Vector2(0.8568, -0.51)
+node_a = NodePath("../flipper_right")
+
+[node name="Ball" parent="." instance=ExtResource("2_e78sp")]
+position = Vector2(45, 587)
+scale = Vector2(1, 1)

@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://r6hwm3duqphe"]
+
+[ext_resource type="Script" uid="uid://ci2tj1nehrx0t" path="res://Ball.gd" id="1_uhrng"]
+[ext_resource type="Texture2D" uid="uid://dicwtbpd6v7jo" path="res://Ball Pinball.png" id="2_225pu"]
+[ext_resource type="Script" uid="uid://bnctqmofcwfwh" path="res://BallRigid.gd" id="2_i14jm"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jiwff"]
+bounce = 0.29
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t04va"]
+radius = 24.0208
+
+[node name="Ball" type="Node2D"]
+
+[node name="Ball" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_uhrng")
+metadata/_edit_use_anchors_ = true
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Ball"]
+physics_material_override = SubResource("PhysicsMaterial_jiwff")
+script = ExtResource("2_i14jm")
+
+[node name="Area2D" type="Area2D" parent="Ball/RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/RigidBody2D/Area2D"]
+shape = SubResource("CircleShape2D_t04va")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/RigidBody2D"]
+scale = Vector2(0.64, 0.64)
+shape = SubResource("CircleShape2D_t04va")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball/RigidBody2D"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_225pu")

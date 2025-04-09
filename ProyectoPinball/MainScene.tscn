@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://chp7fa8ly12jd"]
+
+[ext_resource type="PackedScene" uid="uid://r6hwm3duqphe" path="res://Ball.tscn" id="1_ejgj0"]
+[ext_resource type="PackedScene" uid="uid://dmj3qpde434rj" path="res://Portal.tscn" id="2_hep5b"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ball1" parent="." instance=ExtResource("1_ejgj0")]
+position = Vector2(-125, 46)
+
+[node name="Portal1" parent="." instance=ExtResource("2_hep5b")]
+offset_left = 561.0
+offset_top = 474.0
+offset_right = 561.0
+offset_bottom = 474.0
+rotation = -0.00502786
+script = null
+
+[node name="Portal2" parent="." instance=ExtResource("2_hep5b")]
+offset_left = 738.0
+offset_top = 479.0
+offset_right = 738.0
+offset_bottom = 479.0
+rotation = -5.92634
+script = null
+
+[node name="Portal3" parent="." instance=ExtResource("2_hep5b")]
+offset_left = 821.0
+offset_top = 329.0
+offset_right = 821.0
+offset_bottom = 329.0
+rotation = -2.04035
+script = null
+
+[node name="Portal4" parent="." instance=ExtResource("2_hep5b")]
+offset_left = 172.0
+offset_top = 155.0
+offset_right = 172.0
+offset_bottom = 155.0
+rotation = 3.13116
+script = null
+
+[node name="Portal5" parent="." instance=ExtResource("2_hep5b")]
+offset_left = 370.0
+offset_top = 481.0
+offset_right = 370.0
+offset_bottom = 481.0
+rotation = 5.84452
+script = null

@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnrbgplbbslyk"]
+
+[ext_resource type="Texture2D" uid="uid://0eprgd2yuhu7" path="res://assets/table.png" id="1_x88jy"]
+
+[node name="Tabla" type="Node2D"]
+position = Vector2(1, 4)
+
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(184.5, 321.5)
+scale = Vector2(0.402902, 0.359933)
+texture = ExtResource("1_x88jy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Table"]
+
+[node name="ParedesCentroCentro" type="CollisionPolygon2D" parent="Table/StaticBody2D"]
+position = Vector2(-450.482, -896)
+scale = Vector2(2.48199, 2.77829)
+build_mode = 1
+polygon = PackedVector2Array(123, 270, 144, 227, 207, 228, 228, 268, 244, 235, 155, 205, 99, 128, 116, 106, 175, 90, 174, 81, 125, 92, 102, 108, 90, 132, 89, 153)
+
+[node name="ParedesCentro" type="CollisionPolygon2D" parent="Table/StaticBody2D"]
+position = Vector2(-450.482, -896)
+scale = Vector2(2.48199, 2.77829)
+build_mode = 1
+polygon = PackedVector2Array(82, 284, 56, 134, 70, 102, 107, 74, 157, 61, 195, 64, 206, 73, 207, 88, 263, 108, 274, 126, 267, 147, 241, 184, 226, 198, 252, 210, 284, 140, 288, 107, 275, 83, 250, 69, 215, 58, 163, 54, 125, 60, 85, 78, 50, 114, 34, 155, 34, 188, 71, 293)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Table/StaticBody2D"]
+position = Vector2(-450.482, -896)
+scale = Vector2(2.48199, 2.77829)
+polygon = PackedVector2Array(275, 39, 269, 52, 260, 48, 265, 34)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Table/StaticBody2D"]
+position = Vector2(-450.482, -896)
+scale = Vector2(2.48199, 2.77829)
+build_mode = 1
+polygon = PackedVector2Array(205, 23, 146, 26, 103, 38, 93, 49, 132, 37, 164, 33, 203, 35)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Table/StaticBody2D"]
+position = Vector2(-450.482, -896)
+scale = Vector2(2.48199, 2.77829)
+polygon = PackedVector2Array(234, 26, 231, 38, 240, 41, 244, 28)
+
+[node name="Paredes1" type="CollisionPolygon2D" parent="Table/StaticBody2D"]
+position = Vector2(-450.482, -896)
+scale = Vector2(2.48199, 2.77829)
+build_mode = 1
+polygon = PackedVector2Array(329, 644, 325, 88, 300, 52, 290, 66, 307, 90, 314, 110, 314, 140, 262, 308, 272, 313, 292, 268, 319, 276, 300, 339, 317, 406, 317, 527, 223, 597, 224, 643)
+
+[node name="Paredes2" type="CollisionPolygon2D" parent="Table/StaticBody2D"]
+position = Vector2(-450.482, -896)
+scale = Vector2(2.48199, 2.77829)
+build_mode = 1
+polygon = PackedVector2Array(347, 643, 346, 85, 338, 59, 305, 27, 233, 3, 141, 4, 100, 14, 71, 33, 67, 57, 64, 66, 22, 107, 8, 140, 8, 174, 19, 238, 43, 324, 13, 408, 14, 531, 106, 595, 106, 643, 0, 646, 3, 19, 100, 0, 361, -1, 363, 642)

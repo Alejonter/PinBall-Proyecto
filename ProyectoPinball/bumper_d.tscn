@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7v478605nnq1"]
+
+[ext_resource type="Texture2D" uid="uid://3md58txuhe6a" path="res://assets/Rebota1-removebg-preview.png" id="2_827y0"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4tvu1"]
+a = Vector2(18, -37)
+b = Vector2(-32, 38)
+
+[node name="BumperD" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_4tvu1")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("2_827y0")

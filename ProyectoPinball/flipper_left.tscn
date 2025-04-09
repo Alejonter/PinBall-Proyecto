@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs43y3ss3xuob"]
+
+[ext_resource type="Texture2D" uid="uid://blb3wwj75m28l" path="res://assets/flipperL.png" id="1_frs1l"]
+[ext_resource type="Script" uid="uid://vl6enipdgw6o" path="res://flipper_left.gd" id="1_plfuk"]
+
+[node name="RigidBody2D" type="CharacterBody2D"]
+scale = Vector2(-0.52, -0.534)
+script = ExtResource("1_plfuk")
+
+[node name="FlipperL" type="Sprite2D" parent="."]
+position = Vector2(8, -2)
+rotation = 3.14159
+scale = Vector2(-0.52, -0.534)
+texture = ExtResource("1_frs1l")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1.68124, 1.55909)
+scale = Vector2(-0.52, -0.534)
+polygon = PackedVector2Array(20, -17, 49, -17, 81, -14, 93, -1, 70, 13, 47, 10, 7, 16, -21, 13, -43, 17, -71, 18, -81, -6, -82, -22, -67, -26, -39, -24, -15, -23)

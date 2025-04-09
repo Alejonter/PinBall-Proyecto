@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://chp7fa8ly12jd"]
+
+[ext_resource type="Script" path="res://Portal.gd" id="1_dkth3"]
+[ext_resource type="Script" path="res://Ball.gd" id="1_emnmt"]
+[ext_resource type="Texture2D" uid="uid://biykd8037qjn4" path="res://Ball Pinball.png" id="2_7ro7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tfxr"]
+size = Vector2(290, 30)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qxfo0"]
+bounce = 0.29
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sgyry"]
+radius = 24.0208
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Portal" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 805.0
+offset_top = 570.0
+offset_right = 1096.0
+offset_bottom = 603.0
+script = ExtResource("1_dkth3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Portal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/StaticBody2D"]
+position = Vector2(145, -35)
+rotation = -0.334012
+shape = SubResource("RectangleShape2D_5tfxr")
+
+[node name="ColorRect" type="ColorRect" parent="Portal/StaticBody2D"]
+offset_right = 291.0
+offset_bottom = 31.0
+rotation = -0.357643
+
+[node name="Ball" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_emnmt")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Ball"]
+physics_material_override = SubResource("PhysicsMaterial_qxfo0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball/RigidBody2D"]
+shape = SubResource("CircleShape2D_sgyry")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ball/RigidBody2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_7ro7a")
+
+[node name="Floor" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 534.0
+offset_top = 460.0
+offset_right = 825.0
+offset_bottom = 493.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor/StaticBody2D"]
+position = Vector2(145, -35)
+rotation = -0.334012
+shape = SubResource("RectangleShape2D_5tfxr")
+
+[node name="ColorRect" type="ColorRect" parent="Floor/StaticBody2D"]
+offset_right = 291.0
+offset_bottom = 31.0
+rotation = -0.357643

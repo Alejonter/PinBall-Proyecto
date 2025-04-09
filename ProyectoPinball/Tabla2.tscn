@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7fi1mog7rit5"]
+
+[ext_resource type="Texture2D" uid="uid://daqpycvt2fd88" path="res://Assets/fondods.jpg" id="1_xv3bg"]
+
+[node name="Pinball2" type="Node2D"]
+
+[node name="Tabla2" type="Sprite2D" parent="."]
+
+[node name="Fondods" type="Sprite2D" parent="Tabla2"]
+position = Vector2(198.625, 324)
+scale = Vector2(0.210807, 0.536667)
+texture = ExtResource("1_xv3bg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tabla2/Fondods"]
+position = Vector2(-805.268, -552.307)
+scale = Vector2(4.46131, 1.80394)
+polygon = PackedVector2Array(329, 644, 325, 88, 300, 52, 290, 66, 307, 90, 314, 110, 314, 140, 262, 308, 272, 313, 292, 268, 319, 276, 300, 339, 317, 406, 317, 527, 223, 597, 224, 643)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Tabla2/Fondods"]
+position = Vector2(-941.025, -589.542)
+scale = Vector2(5.19451, 1.83959)
+polygon = PackedVector2Array(347, 643, 346.907, 590.938, 346, 85, 338, 59, 305, 27, 233, 3, 141, 4, 100, 14, 71, 33, 67, 57, 64, 66, 22, 107, 8, 140, 8, 174, 19, 238, 43, 324, 13, 408, 14, 531, 106, 595, 106, 643, 0, 646, 3, 19, 100, 0, 361, -1, 363, 642)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Tabla2/Fondods"]
+position = Vector2(-671.822, -698.758)
+scale = Vector2(3.47838, 3.48404)
+polygon = PackedVector2Array(82, 284, 56, 134, 70, 102, 107, 74, 157, 61, 195, 64, 206, 73, 207, 88, 263, 108, 274, 126, 267, 147, 241, 184, 226, 198, 252, 210, 284, 140, 288, 107, 275, 83, 250, 69, 215, 58, 163, 54, 125, 60, 85, 78, 50, 114, 34, 155, 34, 188, 71, 293)
+
+[node name="Polygon2D" type="Polygon2D" parent="Tabla2"]
+polygon = PackedVector2Array(338, 646, 336, 114, 311, 80, 302, 93, 321, 120, 327, 535, 241, 607, 239, 643)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Tabla2"]
+polygon = PackedVector2Array(382, 646, 380, 93, 371, 64, 335, 35, 262, 11, 151, 11, 109, 23, 79, 39, 75, 68, 26, 111, 10, 144, 16, 225, 45, 314, 48, 332, 17, 405, 17, 534, 115, 594, 118, 643, -3, 643, -2, 5, 395, 4, 402, 5, 400, 643)

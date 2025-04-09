@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://v2jhmu0vhoi"]
+
+[ext_resource type="PackedScene" uid="uid://cnrbgplbbslyk" path="res://tabla.tscn" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cs43y3ss3xuob" path="res://flipper_left.tscn" id="1_ugnbd"]
+[ext_resource type="PackedScene" uid="uid://dhv1hvpfdpbvd" path="res://flipper_right.tscn" id="2_undvo"]
+[ext_resource type="PackedScene" uid="uid://r6hwm3duqphe" path="res://Ball.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://dew2behlgwupp" path="res://bumper_izq.tscn" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://c7v478605nnq1" path="res://bumper_d.tscn" id="8_5vw27"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(-1, 2)
+
+[node name="Tabla" parent="." instance=ExtResource("1_lquwl")]
+position = Vector2(0, 51)
+
+[node name="Ball" parent="Tabla" instance=ExtResource("6_7mycd")]
+position = Vector2(-183, 354)
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="Tabla"]
+position = Vector2(220, 603)
+rotation = 3.14159
+scale = Vector2(1.68, -1)
+node_a = NodePath("../flipper_right")
+
+[node name="flipper_right" parent="Tabla" instance=ExtResource("2_undvo")]
+position = Vector2(209, 604)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Tabla"]
+position = Vector2(115, 604)
+
+[node name="RigidBody2D" parent="Tabla" instance=ExtResource("1_ugnbd")]
+position = Vector2(135, 604)
+rotation = 3.14159
+scale = Vector2(0.52, 0.534)
+
+[node name="BumperIzq" parent="Tabla" instance=ExtResource("6_272bh")]
+position = Vector2(73, 508)
+
+[node name="BumperD" parent="." instance=ExtResource("8_5vw27")]
+position = Vector2(262, 554)
